@@ -4,6 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 @SpringBootApplication
 public class NeetcodeApplication {
@@ -12,21 +14,23 @@ public class NeetcodeApplication {
 
 //		SpringApplication.run(NeetcodeApplication.class, args);
 
-		String s = "anagram";
-		String t = "nagaram";
-		char[] sChars = s.toCharArray();
-		char[] tChars = t.toCharArray();
+		int[] nums = new int[] {2, 7, 11, 15};
+		int target = 9;
+		Map<Integer, Integer> prevMap = new HashMap<>();
 
-		Arrays.sort(sChars);
-		Arrays.sort(tChars);
+		for (int i=0; i<nums.length; i++) {
+			int num = nums[i];
+			int diff = target - num;
 
-		System.out.println(sChars);
-		System.out.println(tChars);
+			if (prevMap.containsKey(diff)) {
+				System.out.println(new int[] {prevMap.get(diff), i});
+			}
+			prevMap.put(num, i);
+		}
+		System.out.println(new int[]{});
 
-		System.out.println(Arrays.equals(sChars, tChars));
 
-		char test1 = 'a';
-		System.out.println(test1);
+
 	}
 
 }
