@@ -14,19 +14,10 @@ public class NeetcodeApplication {
 
 //		SpringApplication.run(NeetcodeApplication.class, args);
 
-		int[] nums = new int[] {2, 7, 11, 15};
-		int target = 9;
-		Map<Integer, Integer> prevMap = new HashMap<>();
-
-		for (int i=0; i<nums.length; i++) {
-			int num = nums[i];
-			int diff = target - num;
-
-			if (prevMap.containsKey(diff)) {
-				System.out.println(new int[] {prevMap.get(diff), i});
-			}
-			prevMap.put(num, i);
-		}
+		int[] hash = new int[127];
+		hash['z']++;
+		hash['a']++;
+		hash['z'-'a']++;
 		System.out.println(new int[]{});
 
 
